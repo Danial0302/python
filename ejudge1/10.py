@@ -1,5 +1,0 @@
-x = input()
-y = input()
-z = input()
-result = x.replace(y, z)
-print(result)
