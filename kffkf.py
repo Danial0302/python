@@ -1,6 +1,3 @@
-import re
-s = input()
-p = input()
-r = input()
-result = re.sub(p, r, s)
-print(result)
+import shutil
+
+shutil.move("test.txt", "test_folder/")
