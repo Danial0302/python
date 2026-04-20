@@ -18,3 +18,13 @@ BEGIN
     where name = p_search OR phone = p_search;
 END;
 $$ LANGUAGE plpgsql;
+
+
+
+CREATE OR REPLACE FUNCTION find_name_or_phone(phbok text)
+RETURN int AS $$
+BEGIN
+RETURN QUERY
+SELECT count(*)
+FROM phonebook_pr8 pb
+WHEREA pb.name ILIKE '%' || phbook || '%'

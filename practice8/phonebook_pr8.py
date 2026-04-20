@@ -114,7 +114,7 @@ def del_contact():
     with get_con() as conn:
         with conn.cursor() as cur:
             # if you use function from functions.sql
-            cur.execute("SELECT delete_contact(%s)", (del_user,))
+            cur.execute("SELECT delete3_contact(%s)", (del_user,))
             conn.commit()
             print("Deleted contact successfully.")
 
@@ -124,8 +124,7 @@ def menu():
     conn = get_con()
     try:
         execute_sql_file("functions.sql", conn)
-        # if you use procedure.sql instead, use CALL in upsert_user/del_contact
-        # execute_sql_file("procedure.sql", conn)
+        # execute_sql_file("procedure.sql", conn)  # commented out to avoid routine kind conflict
     except Exception as e:
         print(f"Error executing SQL files: {e}")
 
@@ -152,3 +151,4 @@ def menu():
 
 if __name__ == "__main__":
     menu()
+

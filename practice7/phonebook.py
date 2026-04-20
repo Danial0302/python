@@ -4,10 +4,11 @@ from config import parametrs
 
 def get_conn():
     return psycopg2.connect(
-        host=parametrs['host'].strip(),
-        database=parametrs['database'].strip(),
-        user=parametrs['user'].strip(),
-        password=parametrs['password'].strip()
+        host=parametrs["host"],
+        database=parametrs["database"],
+        user=parametrs["user"],
+        password=parametrs["password"],
+        port=parametrs.get("port", 5432)
     )
 
 def crate_table():
@@ -46,7 +47,7 @@ def update_contact(name, new_phone):
 def contact_find(soz):
     with get_conn() as conn:
         with conn.cursor() as throw:
-            throw.execute("SELECT * FROM phonebook WHERE name LIKE %s OR phone LIKE %s", (f'%{soz}%', f'{soz}%'))
+            throw.execute("SELECT * FROM phonebook WHERE name LIKE %s OR LIKE %s", (f))
             res = throw.fetchall()
             if res:
                 for row in res: print(row)
@@ -58,7 +59,7 @@ def contact_del(name):
         conn.commit()
 def see_all():
     with get_conn() as conn:
-        with conn.cursor()as throw:
+        with conn.cursor() as throw:
             throw.execute("select*from phonebook")
             rows=throw.fetchall()
             for row in rows:
