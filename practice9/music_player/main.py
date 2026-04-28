@@ -16,7 +16,9 @@ playlist = [
     os.path.join(BASE_DIR, "music/YTDown.com_YouTube_Media_XPNNWHU6Io4_007_128k.mp3"),
     os.path.join(BASE_DIR, "music/YTDown.com_YouTube_Media_5860mTG8J_8_009_128k.mp3"),
     os.path.join(BASE_DIR, "music/YTDown.com_YouTube_Media_AqeMrA8HS0Y_009_128k.mp3"),
-    os.path.join(BASE_DIR, "music/YTDown.com_YouTube_Media_tiMbY9M83BY_009_128k.mp3")
+    os.path.join(BASE_DIR, "music/YTDown.com_YouTube_Media_tiMbY9M83BY_009_128k.mp3"),
+    os.path.join(BASE_DIR, "music/12 Заттыбек Акмаржан.mp3")
+
 ]
 
 player = MusicPlayer(playlist)

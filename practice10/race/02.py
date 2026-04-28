@@ -62,7 +62,6 @@ class Enemy(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.speed = 10
         # or
-        # self.rect.midbottom = (WIDTH // 2, HEIGHT)
 
     def generate_random_rect(self):
         self.rect.left = random.randint(0, WIDTH - self.rect.w)
@@ -79,17 +78,19 @@ class Coin(pygame.sprite.Sprite):
         self.image = coin_image
         self.image = pygame.transform.scale(self.image, (50, 50))
         self.rect = self.image.get_rect()  
-        self.generate_random_rect()       
+        self.generate_random_rect() 
+    def move(self):
+        self.rect.move_ip(0, self.speed)
+        
+
+          
 
     def generate_random_rect(self):
-        # random x, but keep it within screen width
         self.rect.left = random.randint(0, WIDTH - self.rect.w)
-        # fixed y near the bottom where the player moves
-        self.rect.top = HEIGHT - 80
+        self.rect.top = 0
 
 running = True
 
-# this object allows us to set the FPS
 clock = pygame.time.Clock()
 FPS = 60
 

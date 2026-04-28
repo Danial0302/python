@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Aigul",
+        "email": "aigul@gmail.com",
+        "birthday": "2000-02-02",
+        "group": "Family",
+        "phones": [
+            {
+                "phone": "87071234567",
+                "type": "mobile"
+            }
+        ]
+    },
+    {
+        "name": "Danial",
+        "email": "danial@gmail.com",
+        "birthday": "2006-01-01",
+        "group": "Friend",
+        "phones": [
+            {
+                "phone": "+899",
+                "type": "home"
+            }
+        ]
+    },
+    {
+        "name": "Aliya",
+        "email": "aliya@gmail.com",
+        "birthday": "2001-05-10",
+        "group": "Friend",
+        "phones": [
+            {
+                "phone": "87075554433",
+                "type": "home"
+            }
+        ]
+    }
+]

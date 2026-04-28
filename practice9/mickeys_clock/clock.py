@@ -38,15 +38,15 @@ def mickclock():
 
         sec_angle = -sec * 6
         min_angle = -(minute * 6 + sec * 0.1)
-        hour_angle = -(hour * 30 + minute * 0.5)
+        
         
         screen.blit(bg, (0, 0))
 
-        hour_rot = pygame.transform.rotate(lh, hour_angle)
+        hour_rot = pygame.transform.rotate(lh, min_angle)
         hour_rect = hour_rot.get_rect(center=center)
         screen.blit(hour_rot, hour_rect)
 
-        min_rot = pygame.transform.rotate(rh, min_angle)
+        min_rot = pygame.transform.rotate(rh, sec_angle)
         min_rect = min_rot.get_rect(center=center)
         screen.blit(min_rot, min_rect)
 
